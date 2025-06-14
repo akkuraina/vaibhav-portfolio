@@ -32,7 +32,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl">
             {/* Text Content */}
             <div className="text-center md:text-left md:max-w-[500px]">
-              <h1 className="text-7xl md:text-8xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-7xl md:text-8xl font-bold text-gray-300 mb-6 leading-tight">
                 <Typewriter
                   text="Hi, I'm Akanksha"
                   delay={200}
@@ -96,7 +96,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="min-h-screen flex items-center justify-center relative">
         <div className="max-w-4xl mx-auto px-6 text-center z-10">
-          <h2 className="text-6xl font-bold text-white mb-8">
+          <h2 className="text-6xl font-bold text-gray-300 mb-8">
             About Me
           </h2>
           <div className="text-lg text-gray-300 space-y-6 max-w-2xl mx-auto">
@@ -156,7 +156,7 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="min-h-screen flex items-center justify-center relative">
         <div className="max-w-4xl mx-auto px-6 py-20">
-          <h2 className="text-6xl font-bold text-white mb-12 text-center">
+          <h2 className="text-6xl font-bold text-gray-300 mb-12 text-center">
             Experience & Skills
           </h2>
 
@@ -277,7 +277,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="min-h-screen flex items-center justify-center relative">
         <div className="max-w-6xl mx-auto px-6 text-center z-10">
-          <h2 className="text-6xl font-bold text-white mb-12">
+          <h2 className="text-6xl font-bold text-gray-300 mb-12">
             My Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -334,7 +334,7 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="min-h-screen flex items-center justify-center relative">
         <div className="max-w-4xl mx-auto px-6 text-center z-10">
-          <h2 className="text-6xl font-bold text-white mb-8">
+          <h2 className="text-6xl font-bold text-gray-300 mb-8">
             Get In Touch
           </h2>
           <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
