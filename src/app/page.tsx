@@ -32,7 +32,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl">
             {/* Text Content */}
             <div className="text-center md:text-left md:max-w-[500px]">
-              <h1 className="text-7xl md:text-8xl font-bold text-gray-300 mb-6 leading-tight">
+              <h1 className="text-6xl md:text-7xl font-bold text-gray-300 mb-6 leading-tight">
                 <Typewriter
                   text="Hi, I'm Akanksha"
                   delay={200}
@@ -102,13 +102,13 @@ export default function Home() {
           <div className="text-lg text-gray-300 space-y-6 max-w-2xl mx-auto">
             <p>
               Hi! I'm Akanksha, a 20-year-old student/developer based in Mumbai. 
-              When I'm not on my laptop, you can find me on the tennis court, playing the piano in the dark, or huddled with a (few) good books.
+              When I'm not on my laptop, you can find me on the tennis court, playing the piano in the dark, or huddled with (a few) good books.
             </p>
           </div>
           
           {/* Education Section */}
           <div className="mt-16">
-            <h3 className="text-4xl font-bold text-white mb-12 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Education</h3>
+            <h3 className="text-4xl font-bold text-cyan-100 mb-12 text-center">Education</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* College */}
               <a
@@ -117,7 +117,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-cyan-100/20 hover:border-cyan-100/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+                <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-cyan-100/20 hover:border-cyan-100/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 h-[300px]">
                   <div className="flex flex-col items-center mb-6">
                     <h4 className="text-2xl font-bold text-cyan-100 group-hover:text-cyan-300 transition-colors mb-2">Dwarkadas J. Sanghvi College of Engineering</h4>
                     <div className="space-y-4">
@@ -136,7 +136,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-cyan-100/20 hover:border-cyan-100/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+                <div className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-cyan-100/20 hover:border-cyan-100/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 h-[300px]">
                   <div className="flex flex-col items-center mb-6">
                     <h4 className="text-2xl font-bold text-cyan-100 group-hover:text-cyan-300 transition-colors mb-2">Navy Children School, New Delhi</h4>
                     <div className="space-y-4">
@@ -159,6 +159,58 @@ export default function Home() {
           <h2 className="text-6xl font-bold text-gray-300 mb-12 text-center">
             Experience & Skills
           </h2>
+
+          {/* Work Experience Section */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-cyan-100 mb-6">Work Experience</h3>
+            <div className="space-y-6">
+              {/* Current Internship */}
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-cyan-100/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-cyan-100">IT Intern</h3>
+                    <p className="text-gray-300">Tech Mahindra</p>
+                  </div>
+                  <span className="text-gray-400">Present</span>
+                </div>
+                <ul className="list-disc list-inside space-y-2 text-gray-300">
+                  <li>Working on ITIL4 framework and ServiceNow </li>
+                  <li>Collaborating with cross-functional teams</li>
+                  <li>Implementing modern web technologies like javascript</li>
+                </ul>
+              </div>
+
+              {/* Previous Internship */}
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-cyan-100/20">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-cyan-100">Robotics and Mechatronics Intern</h3>
+                    <p className="text-gray-300">Naval Dockyard, Mumbai</p>
+                  </div>
+                  <span className="text-gray-400">2024</span>
+                </div>
+                <ul className="list-disc list-inside space-y-2 text-gray-300">
+                  <li>Worked in the WECORS department</li>
+                  <li>Caliberated instruments</li>
+                  <li>Gained valuable and rare insights about the Navy's electronics </li>
+                </ul>
+              </div>
+
+              {/* College Committees */}
+              <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-cyan-100/20">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-semibold text-cyan-100">College Committees</h3>
+                  <span className="text-gray-400">2023-2025</span>
+                </div>
+                <ul className="list-disc list-inside space-y-2 text-gray-300">
+                  <li>DJS MUNSOC - marketing assosiate </li>
+                  <li>DJS NOVA - web dev (tech) assosiate</li>
+                  <li>ECELL - editorial assosiate</li>
+                  <li>IETE - editorial assosiate</li>
+                </ul>
+              </div>
+            </div>
+          </div>
 
           {/* Skills Section */}
           <div className="mb-16">
@@ -230,45 +282,13 @@ export default function Home() {
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Communication</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Editorial</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Marketing</span>
+                  <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Team Collaboration</span>
+                  <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Problem Solving</span>
+                  <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Time Management</span>
+                  <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Adaptability</span>
+                  <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Technical Writing</span>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Internships Section */}
-        <div>
-          <h2 className="text-3xl font-bold text-cyan-100 mb-6">Internships</h2>
-          <div className="space-y-6">
-            {/* Current Internship */}
-            <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-cyan-100/20">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-cyan-100">IT Intern</h3>
-                  <p className="text-gray-300">Tech Mahindra</p>
-                </div>
-                <span className="text-gray-400">Present</span>
-              </div>
-              <ul className="list-disc list-inside space-y-2 text-gray-300">
-                <li>Working on ITIL4 framework and ServiceNow </li>
-                <li>Collaborating with cross-functional teams</li>
-                <li>Implementing modern web technologies</li>
-              </ul>
-            </div>
-
-            {/* Previous Internship */}
-            <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg border border-cyan-100/20">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-cyan-100">Robotics and Mechatronics Intern</h3>
-                  <p className="text-gray-300">Naval Dockyard, Mumbai</p>
-                </div>
-                <span className="text-gray-400">2024</span>
-              </div>
-              <ul className="list-disc list-inside space-y-2 text-gray-300">
-                <li>Worked in the WECORS department</li>
-                <li>Caliberated instruments</li>
-              </ul>
-            </div>
             </div>
           </div>
         </div>
@@ -286,19 +306,19 @@ export default function Home() {
                 title: "Portfolio Website",
                 description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and a star background.",
                 technologies: ["Next.js", "TypeScript", "Tailwind"],
-                link: "https://github.com/yourusername/portfolio"
+                link: "https://github.com/akkuraina/my-portfolio"
               },
               {
                 title: "YapMonster",
                 description: "A full-stack chatting application with real-time updates, user authentication, and drag-and-drop functionality.",
                 technologies: ["React", "MongoDB", "Socket.io"],
-                link: "https://github.com/yourusername/task-manager"
+                link: "https://github.com/akkuraina/YapMonster"
               },
               {
                 title: "E-commerce Platform",
                 description: "A feature-rich e-commerce platform with product management, user authentication, and payment integration.",
                 technologies: ["Next.js", "PostgreSQL", "Stripe"],
-                link: "https://github.com/yourusername/ecommerce"
+                link: "https://github.com/akkuraina"
               }
             ].map((project, index) => (
               <div 
