@@ -22,8 +22,8 @@ const cascadiaMono = localFont({
 });
 
 export const metadata = {
-  title: 'Akanksha - Full Stack Developer',
-  description: 'Portfolio website showcasing my work as a Full Stack Developer',
+  title: 'Vaibhav - Artist Manager',
+  description: 'Portfolio website showcasing my work as an artist manager',
 };
 
 export default function RootLayout({
