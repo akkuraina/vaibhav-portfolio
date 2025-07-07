@@ -29,10 +29,10 @@ export default function Home() {
       <section id="home" className="min-h-screen flex flex-col items-center justify-center relative">
         <div className="container mx-auto px-6 flex flex-col items-center justify-center gap-12 z-10 pt-32">
           {/* Main Content - Photo and Text */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl w-full px-2">
             {/* Text Content */}
-            <div className="text-center md:text-left md:max-w-[500px]">
-              <h1 className="text-6xl md:text-7xl font-bold text-gray-300 mb-6 leading-tight">
+            <div className="text-center md:text-left md:max-w-[500px] px-2">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-300 mb-6 leading-tight break-words">
                 <Typewriter
                   text="Hi, I'm Vaibhav"
                   delay={200}
@@ -49,9 +49,8 @@ export default function Home() {
             </div>
 
             {/* Photo */}
-            <div className="flex justify-center">
-              <br></br>
-              <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[500px] rounded-2xl overflow-hidden border-2 border-cyan-100/20 shadow-2xl shadow-cyan-500/20">
+            <div className="flex justify-center w-full">
+              <div className="relative w-40 h-40 md:w-[400px] md:h-[500px] max-w-full rounded-2xl overflow-hidden border-2 border-cyan-100/20 shadow-2xl shadow-cyan-500/20">
                 <img
                   src="/images/vaibhav.jpeg.jpg"
                   alt="Vaibhav"
@@ -102,11 +101,11 @@ export default function Home() {
           </h2>
           <div className="text-lg text-gray-300 space-y-6 max-w-2xl mx-auto">
             <p>
-            Hey, I’m Vaibhav — a 22-year-old artist manager who lives for live music and real connections.
+            Hey, I'm Vaibhav — a 22-year-old artist manager who lives for live music and real connections.
 
-When I’m not deep in meetings or behind the screen, I’m probably front row at a gig, scouting talent, or vibing with the scene.
+When I'm not deep in meetings or behind the screen, I'm probably front row at a gig, scouting talent, or vibing with the scene.
 
-Let’s talk if you're looking for someone who knows how to move both artists and audiences.            
+Let's talk if you're looking for someone who knows how to move both artists and audiences.            
 </p>
           </div>
           
@@ -162,7 +161,7 @@ Let’s talk if you're looking for someone who knows how to move both artists an
           <h2 className="text-6xl font-bold text-gray-300 mb-12">
             My Artists
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
             {[
               {
                 title: "Rashim Anand",
@@ -198,7 +197,7 @@ Let’s talk if you're looking for someone who knows how to move both artists an
                 className="bg-slate-800/30 backdrop-blur-sm border border-cyan-100/10 rounded-xl p-6 hover:border-cyan-100/30 transition-all duration-300 hover:-translate-y-2"
               >
                 {/* Artist Photo */}
-                <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden border border-cyan-100/20">
+                <div className="relative w-full aspect-square sm:aspect-[4/3] mb-6 rounded-lg overflow-hidden border border-cyan-100/20">
                   <img
                     src={artist.image}
                     alt={artist.title}
@@ -356,6 +355,7 @@ Let’s talk if you're looking for someone who knows how to move both artists an
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">75 Zindabad (Basu)</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Gravity (Basu)</span>
                   {/* <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
+                  <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>

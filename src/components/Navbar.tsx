@@ -45,16 +45,16 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="bg-slate-800/30 backdrop-blur-sm border border-cyan-100/10 rounded-full px-6 py-3 flex items-center gap-8">
+    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-full px-2">
+      <div className="bg-slate-800/30 backdrop-blur-sm border border-cyan-100/10 rounded-full px-4 py-3 flex items-center gap-4 overflow-x-auto max-w-full">
         <ThemeToggle />
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className={`text-sm font-medium transition-colors duration-200 ${
+              className={`text-base md:text-sm font-medium transition-colors duration-200 ${
                 activeSection === item.href.substring(1)
                   ? 'text-cyan-100'
                   : 'text-gray-300 hover:text-cyan-100'
