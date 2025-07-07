@@ -45,8 +45,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-full px-2">
-      <div className="bg-slate-800/30 backdrop-blur-sm border border-cyan-100/10 rounded-full px-4 py-3 flex items-center gap-4 overflow-x-auto max-w-full">
+    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="bg-slate-800/30 backdrop-blur-sm border border-cyan-100/10 rounded-full px-4 py-2 flex items-center gap-4 overflow-x-auto">
         <ThemeToggle />
         <div className="flex items-center gap-4">
           {navItems.map((item) => (
