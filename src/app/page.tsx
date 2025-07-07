@@ -27,7 +27,7 @@ export default function Home() {
     <main className="min-h-screen relative">
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex flex-col items-center justify-center relative">
-        <div className="container mx-auto px-6 flex flex-col items-center justify-center gap-12 z-10 pt-20">
+        <div className="container mx-auto px-6 flex flex-col items-center justify-center gap-12 z-10 pt-32">
           {/* Main Content - Photo and Text */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-5xl">
             {/* Text Content */}
@@ -50,7 +50,8 @@ export default function Home() {
 
             {/* Photo */}
             <div className="flex justify-center">
-              <div className="relative w-[320px] h-[400px] md:w-[400px] md:h-[500px] rounded-2xl overflow-hidden border-2 border-cyan-100/20 shadow-2xl shadow-cyan-500/20">
+              <br></br>
+              <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[500px] rounded-2xl overflow-hidden border-2 border-cyan-100/20 shadow-2xl shadow-cyan-500/20">
                 <img
                   src="/images/vaibhav.jpeg.jpg"
                   alt="Vaibhav"
@@ -101,9 +102,12 @@ export default function Home() {
           </h2>
           <div className="text-lg text-gray-300 space-y-6 max-w-2xl mx-auto">
             <p>
-              Hi! I'm Vaibhav, a 22-year-old artist manager. 
-              When I'm not on my laptop in a meeting, you can find me at a gig having a good time and making connections.
-            </p>
+            Hey, I’m Vaibhav — a 22-year-old artist manager who lives for live music and real connections.
+
+When I’m not deep in meetings or behind the screen, I’m probably front row at a gig, scouting talent, or vibing with the scene.
+
+Let’s talk if you're looking for someone who knows how to move both artists and audiences.            
+</p>
           </div>
           
           {/* Education Section */}
@@ -151,7 +155,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-<br></br>
+<br></br><br></br>
       {/* My Artists Section */}
       <section id="projects" className="min-h-screen flex items-center justify-center relative">
         <div className="max-w-6xl mx-auto px-6 text-center z-10">
@@ -172,17 +176,17 @@ export default function Home() {
                 description: "A genre-bending artist known for ethereal vocals and experimental beats. Artemis brings a fresh, avant-garde sound to the scene.",
                 image: "/images/artemis.jpeg.jpg",
                 genres: ["Experimental", "Electronic", "Indie"],
-                link: "#"
+                link: "https://open.spotify.com/artist/5fqkVDtrQxTRPYdAW6rJGn?si=guniPKIHSQKpRIYRyURpMA"
               },
               {
-                title: "Gurnoor Singh",
+                title: "Gurru",
                 description: "A talented hip-hop artist with raw energy and authentic storytelling. Known for his powerful lyrics and dynamic stage presence.",
                 image: "/images/gurru.jpg",
                 genres: ["Hip-Hop", "Rap", "Desi"],
                 link: "https://open.spotify.com/artist/226Y2NkUT5VP9jrbdIVSm0?si=DTPkfnVzSuG6QZyHMvg-bg"
               },
               {
-                title: "Sidhant Basu",
+                title: "BASU",
                 description: "A versatile performer who brings innovation to the desi hip-hop scene. His work showcases the evolution of Indian rap culture.",
                 image: "/images/basu.jpg",
                 genres: ["Hip-Hop", "Rap", "Innovation"],
@@ -352,6 +356,7 @@ export default function Home() {
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">75 Zindabad (Basu)</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">Gravity (Basu)</span>
                   {/* <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
+                  <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
                   <span className="px-4 py-2 bg-cyan-900/30 text-cyan-100 rounded-full text-sm">nsjh basu</span>
