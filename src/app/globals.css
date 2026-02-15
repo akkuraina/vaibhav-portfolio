@@ -1,25 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --text: #000000;
-  --primary: #06b6d4;
-  --secondary: #0ea5e9;
-  --accent: #e0f2fe;
-  --muted: #64748b;
-  --card-bg: rgba(241, 245, 249, 0.3);
-  --card-border: rgba(0, 0, 0, 0.1);
+  --background: #501216;
+  --text: #CCB999;
+  --primary: #CCB999;
+  --secondary: #CCB999;
+  --accent: #f5e6d3;
+  --muted: #e6d5c3;
+  --card-bg: rgba(204, 185, 153, 0.15);
+  --card-border: rgba(204, 185, 153, 0.3);
 }
 
 .dark {
-  --background: #000000;
-  --text: #ffffff;
-  --primary: #06b6d4;
-  --secondary: #0ea5e9;
-  --accent: #0c4a6e;
-  --muted: #94a3b8;
-  --card-bg: rgba(15, 23, 42, 0.3);
-  --card-border: rgba(186, 230, 253, 0.1);
+  --background: #501216;
+  --text: #CCB999;
+  --primary: #CCB999;
+  --secondary: #CCB999;
+  --accent: #f5e6d3;
+  --muted: #e6d5c3;
+  --card-bg: rgba(204, 185, 153, 0.15);
+  --card-border: rgba(204, 185, 153, 0.3);
+}
+
+.light {
+  --background: #CCB999;
+  --text: #501216;
+  --primary: #501216;
+  --secondary: #501216;
+  --accent: #8B5A3C;
+  --muted: #A67C52;
+  --card-bg: rgba(80, 18, 22, 0.15);
+  --card-border: rgba(80, 18, 22, 0.3);
 }
 
 html {
@@ -124,6 +135,47 @@ body {
   border-color: var(--card-border);
 }
 
+/* Theme-aware text color */
+.text-theme {
+  color: var(--text);
+}
+
+.text-theme\/80 {
+  color: color-mix(in srgb, var(--text) 80%, transparent);
+}
+
+.text-theme\/90 {
+  color: color-mix(in srgb, var(--text) 90%, transparent);
+}
+
+/* Theme-aware border colors */
+.border-theme {
+  border-color: var(--card-border);
+}
+
+.border-theme\/50 {
+  border-color: rgba(var(--text-rgb), 0.5);
+}
+
+/* Theme-aware shadow colors */
+.shadow-theme {
+  box-shadow: 0 10px 15px -3px var(--text, #CCB999);
+  opacity: 0.1;
+}
+
+/* Theme-aware button */
+.btn-theme {
+  background: linear-gradient(to right, var(--primary), color-mix(in srgb, var(--primary) 70%, transparent));
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.btn-theme:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px -5px var(--primary);
+  opacity: 0.9;
+}
+
 .text-cyan-100 {
   color: var(--primary);
 }
@@ -134,4 +186,43 @@ body {
 
 .text-gray-400 {
   color: var(--muted);
+}
+
+/* Card hover tilt and glow effects */
+.perspective {
+  perspective: 1000px;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: rotateY(-8deg) rotateX(8deg) scale(1.02);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.2),
+    0 0 60px var(--primary),
+    inset -2px -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, var(--primary), transparent);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.card-hover:hover::before {
+  opacity: 0.25;
 }

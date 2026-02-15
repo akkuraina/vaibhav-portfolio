@@ -1,8 +1,16 @@
 import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '../components/ThemeProvider';
 import Navbar from '../components/Navbar';
 import StarBackground from '../components/StarBackground';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['700', '800', '900'],
+  variable: '--font-inter',
+});
 
 const cascadiaMono = localFont({
   src: [
@@ -32,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cascadiaMono.variable}>
+    <html lang="en" className={`${cascadiaMono.variable} ${inter.variable}`}>
       <body className="font-mono">
         <ThemeProvider>
           <StarBackground />

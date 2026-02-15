@@ -21,14 +21,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     // Set initial theme (default to dark if no saved preference)
     const initialTheme = savedTheme || 'dark';
     setTheme(initialTheme);
-    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+    document.documentElement.className = initialTheme;
   }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    document.documentElement.className = newTheme;
   };
 
   return (

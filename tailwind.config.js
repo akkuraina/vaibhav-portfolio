@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         mono: ['var(--font-cascadia-mono)'],
+        heading: ['var(--font-inter)', 'sans-serif'],
       },
       fontWeight: {
         thin: '100',
