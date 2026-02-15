@@ -86,12 +86,9 @@ export default function Home() {
           onClose={() => setToastConfig(prev => ({ ...prev, show: false }))}
         />
       )}
-      {/* Hero Section */}
       <section id="home" className="min-h-screen flex flex-col items-center justify-center relative">
         <div className="container mx-auto px-6 flex flex-col items-center justify-center gap-12 z-10 pt-32">
-          {/* Main Content - Photo and Text */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl w-full px-2">
-            {/* Text Content */}
             <div className="text-center md:text-left md:max-w-[500px] px-2">
               <h1 className="text-4xl md:text-6xl font-bold font-heading text-theme mb-6 leading-tight break-words uppercase tracking-wider">
                 <Typewriter
@@ -109,7 +106,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Photo */}
             <div className="flex justify-center w-full">
               <div className="relative w-40 h-40 md:w-[400px] md:h-[500px] max-w-full rounded-2xl overflow-hidden border-2 border-white/30 shadow-2xl shadow-white/20">
                 <img
@@ -133,7 +129,7 @@ export default function Home() {
                 </div>
                 <div className="bg-[#CCB999]/10 backdrop-blur-sm border border-[#CCB999]/30 rounded-2xl p-8 hover:border-[#CCB999]/50 transition-all duration-300 hover:-translate-y-2">
                   <div className="text-4xl font-bold text-theme mb-2">30+</div>
-                  <div className="text-theme text-lg">Singles Dropped</div>
+                  <div className="text-theme text-lg">Projects Executed</div>
                 </div>
                 <div className="bg-[#CCB999]/10 backdrop-blur-sm border border-[#CCB999]/30 rounded-2xl p-8 hover:border-[#CCB999]/50 transition-all duration-300 hover:-translate-y-2">
                   <div className="text-4xl font-bold text-theme mb-2">9+</div>
@@ -162,12 +158,10 @@ export default function Home() {
           </h2>
           <div className="text-lg text-theme space-y-6 max-w-2xl mx-auto">
             <p>
-            Hey, I'm Vaibhav — a 22-year-old artist manager who lives for live music and real connections.
-
-When I'm not deep in meetings or behind the screen, I'm probably front row at a gig, scouting talent, or vibing with the scene.
-
-Let's talk if you're looking for someone who knows how to move both artists and audiences.            
-</p>
+            With over 5 years in the game, I've been lucky to work with some of the most talented artists in the desi hip-hop scene. I thrive on helping them grow, navigate the industry, and connect with their fans in authentic ways.
+            <br/><br/>When I'm not deep in meetings or behind the screen, I'm probably front row at a gig, scouting talent, or vibing with the scene.
+            <br/><br/>Let's talk if you're looking for someone who knows how to move both artists and audiences.            
+          </p>
           </div>
           
           {/* Education Section */}
@@ -233,35 +227,32 @@ Let's talk if you're looking for someone who knows how to move both artists and 
                   description: "A genre-bending artist known for ethereal vocals and experimental beats. Artemis brings a fresh, avant-garde sound to the scene.",
                   image: "/images/artemis.jpeg.jpg",
                   genres: ["Experimental", "Electronic", "Indie"],
-                  link: "https://open.spotify.com/artist/5fqkVDtrQxTRPYdAW6rJGn?si=guniPKIHSQKpRIYRyURpMA"
+                  spotifyUrl: "https://open.spotify.com/artist/5fqkVDtrQxTRPYdAW6rJGn?si=guniPKIHSQKpRIYRyURpMA",
+                  instagramUrl: "https://www.instagram.com/artemis.made?igsh=OWJzZXR2bjFkbW9t"
                 },
                 {
                   title: "Jeevant",
                   description: "A dynamic artist bringing fresh perspectives to contemporary music. Known for innovative sound design and compelling performances.",
                   image: "/images/jeevant.png",
                   genres: ["Hip-Hop", "Electronic", "Experimental"],
-                  link: "#"
+                  spotifyUrl: "https://open.spotify.com/artist/0gTdzzUE6fHESA85G9f8Kk?si=4Uw8FTGXRM-TRvL5YPeeUg",
+                  instagramUrl: "https://www.instagram.com/jeevantttttt?igsh=MWR5MmF2ZXk2OXVxNQ=="
                 },
                 {
                   title: "Tanmaya",
                   description: "An innovative artist with a unique sonic signature. Tanmaya creates immersive musical experiences that resonate with diverse audiences.",
                   image: "/images/tanmaya.png",
                   genres: ["Alternative", "Indie", "Fusion"],
-                  link: "#"
+                  spotifyUrl: "https://open.spotify.com/artist/6dIulkuVgKAyvI3or39m8j?si=kT3pXzVuTvCuiWDdYsyxrQ",
+                  instagramUrl: "https://www.instagram.com/tnmaya_?igsh=MWgwNGU5a2Z5eXlvbA=="
                 },
                 {
                   title: "Gurru",
                   description: "A talented hip-hop artist with raw energy and authentic storytelling. Known for his powerful lyrics and dynamic stage presence.",
                   image: "/images/gurru.jpg",
                   genres: ["Hip-Hop", "Rap", "Desi"],
-                  link: "https://open.spotify.com/artist/226Y2NkUT5VP9jrbdIVSm0?si=DTPkfnVzSuG6QZyHMvg-bg"
-                },
-                {
-                  title: "Mohit",
-                  description: "A versatile artist with innovative approaches to music production and performance. Mohit brings energy and creativity to every project.",
-                  image: "/images/mohit.jpg",
-                  genres: ["Hip-Hop", "Pop", "Electronic"],
-                  link: "#"
+                  spotifyUrl: "https://open.spotify.com/artist/226Y2NkUT5VP9jrbdIVSm0?si=eNW6xQ2TTRO-_Gzr-kXYJg",
+                  instagramUrl: "https://www.instagram.com/gurru.jii?igsh=amNmZm50YndlaTVq"
                 }
               ].map((artist, index) => (
               <div 
@@ -294,16 +285,85 @@ Let's talk if you're looking for someone who knows how to move both artists and 
                     </span>
                   ))}
                 </div>
-                <a 
-                  href={artist.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-gradient-to-r from-[var(--primary)] to-[color-mix(in_srgb,_var(--primary)_70%,_transparent)] text-theme px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary)]/25"
-                >
-                  View Artist
-                </a>
+                <div className="flex gap-3 mt-4">
+                  <a 
+                    href={artist.spotifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#1DB954] to-[#1ed760] text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#1DB954]/25"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.375-.745.556-1.159.306-3.176-1.95-7.076-2.387-11.731-1.306-.417.122-.779-.122-.899-.561-.12-.438.122-.795.56-.915 5.088-1.186 9.36-.666 12.995 1.513.417.242.696.986.422 1.463zm1.175-3.275c-.303.459-.956.711-1.456.711-.108 0-.216-.021-.322-.064-3.9-1.952-9.901-2.612-14.464-1.309-.341.077-.678-.156-.779-.521-.098-.362.149-.687.519-.787 5.316-1.324 11.795-.639 16.063 1.50.35.175.64.572.64.981.001.271-.099.53-.297.722zm.9-3.761c-4.564-2.692-12.321-3.268-18.845-1.815-.547.159-1.081-.284-1.239-.842-.157-.561.217-1.09.764-1.249 7.644-1.711 16.219-.957 21.289 2.079.542.315.898.942.898 1.633 0 .642-.356 1.269-.898 1.584z"/>
+                    </svg>
+                    Spotify
+                  </a>
+                  <a 
+                    href={artist.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#E1306C] via-[#FD1D1D] to-[#F77737] text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#E1306C]/25"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                    </svg>
+                    Instagram
+                  </a>
+                </div>
               </div>
-            ))}
+              ))}
+            </div>
+            {/* Mohit - Centered */}
+            <div className="flex justify-center mt-8">
+              <div className="bg-[#CCB999]/10 backdrop-blur-sm border border-[#CCB999]/20 rounded-xl p-6 hover:border-[#CCB999]/50 transition-all duration-300 hover:-translate-y-2 w-full sm:w-1/2">
+                {/* Artist Photo */}
+                <div className="relative w-full aspect-square sm:aspect-[4/3] mb-6 rounded-lg overflow-hidden border border-white/30">
+                  <img
+                    src="/images/mohit.jpg"
+                    alt="Mohit"
+                    className="w-full h-full object-cover object-center"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%2306b6d4' fill-opacity='0.1'/%3E%3Ctext x='150' y='100' text-anchor='middle' fill='%2306b6d4' font-family='Arial' font-size='16'%3EArtist Photo%3C/text%3E%3C/svg%3E";
+                    }}
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-theme mb-3">Mohit</h3>
+                <p className="text-theme/90 mb-4">A versatile artist with innovative approaches to music production and performance. Mohit brings energy and creativity to every project.</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {["Hip-Hop", "Pop", "Electronic"].map((genre, genreIndex) => (
+                    <span 
+                      key={genreIndex}
+                      className="px-3 py-1 bg-theme/20 text-theme rounded-full text-sm"
+                    >
+                      {genre}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-3 mt-4">
+                  <a 
+                    href="https://open.spotify.com/artist/4UubVINfHiZxIV8k2PechF?si=nzTmyRGJRpOJ5pvLVQ6d5g"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#1DB954] to-[#1ed760] text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#1DB954]/25"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.375-.745.556-1.159.306-3.176-1.95-7.076-2.387-11.731-1.306-.417.122-.779-.122-.899-.561-.12-.438.122-.795.56-.915 5.088-1.186 9.36-.666 12.995 1.513.417.242.696.986.422 1.463zm1.175-3.275c-.303.459-.956.711-1.456.711-.108 0-.216-.021-.322-.064-3.9-1.952-9.901-2.612-14.464-1.309-.341.077-.678-.156-.779-.521-.098-.362.149-.687.519-.787 5.316-1.324 11.795-.639 16.063 1.50.35.175.64.572.64.981.001.271-.099.53-.297.722zm.9-3.761c-4.564-2.692-12.321-3.268-18.845-1.815-.547.159-1.081-.284-1.239-.842-.157-.561.217-1.09.764-1.249 7.644-1.711 16.219-.957 21.289 2.079.542.315.898.942.898 1.633 0 .642-.356 1.269-.898 1.584z"/>
+                    </svg>
+                    Spotify
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/mohitsengupta?igsh=MTNtd2gxMjYxdmg0bA=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#E1306C] via-[#FD1D1D] to-[#F77737] text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#E1306C]/25"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                    </svg>
+                    Instagram
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -317,14 +377,16 @@ Let's talk if you're looking for someone who knows how to move both artists and 
                   description: "An accomplished artist with a distinctive musical voice. Manas Taneja brings originality and technical excellence to his craft.",
                   image: "/images/manas-taneja.jpg",
                   genres: ["Singer", "Composer", "Producer"],
-                  link: "#"
+                  spotifyUrl: "https://open.spotify.com/artist/24fkJH9FsT8zDZPkVlwxLJ?si=5Xmeka3MT1OsPkzOY6hzQg",
+                  instagramUrl: "https://www.instagram.com/manastanejaa?igsh=MWNhejJhdDNnYzVyMg=="
                 },
                 {
                   title: "KSAR",
                   description: "A dynamic performance collective known for creating immersive and engaging musical experiences. KSAR specializes in live events and artist collaborations.",
                   image: "/images/ksar.jpg",
                   genres: ["Events", "Performances", "Production"],
-                  link: "#"
+                  spotifyUrl: "https://open.spotify.com/artist/004VTflmTTPecoAfmeLcwS?si=-4vMUpypRWaoRKqi17s7vQ",
+                  instagramUrl: "https://www.instagram.com/theksarmusic?igsh=dXJ5YXh3a3pwNHRn"
                 }
               ].map((artist, index) => (
               <div 
@@ -356,48 +418,47 @@ Let's talk if you're looking for someone who knows how to move both artists and 
                     </span>
                   ))}
                 </div>
-                <a 
-                  href={artist.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-gradient-to-r from-[var(--primary)] to-[color-mix(in_srgb,_var(--primary)_70%,_transparent)] text-theme px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary)]/25"
-                >
-                  View Artist
-                </a>
+                <div className="flex gap-3 mt-4">
+                  <a 
+                    href={artist.spotifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#1DB954] to-[#1ed760] text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#1DB954]/25"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.375-.745.556-1.159.306-3.176-1.95-7.076-2.387-11.731-1.306-.417.122-.779-.122-.899-.561-.12-.438.122-.795.56-.915 5.088-1.186 9.36-.666 12.995 1.513.417.242.696.986.422 1.463zm1.175-3.275c-.303.459-.956.711-1.456.711-.108 0-.216-.021-.322-.064-3.9-1.952-9.901-2.612-14.464-1.309-.341.077-.678-.156-.779-.521-.098-.362.149-.687.519-.787 5.316-1.324 11.795-.639 16.063 1.50.35.175.64.572.64.981.001.271-.099.53-.297.722zm.9-3.761c-4.564-2.692-12.321-3.268-18.845-1.815-.547.159-1.081-.284-1.239-.842-.157-.561.217-1.09.764-1.249 7.644-1.711 16.219-.957 21.289 2.079.542.315.898.942.898 1.633 0 .642-.356 1.269-.898 1.584z"/>
+                    </svg>
+                    Spotify
+                  </a>
+                  <a 
+                    href={artist.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#E1306C] via-[#FD1D1D] to-[#F77737] text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#E1306C]/25"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                    </svg>
+                    Instagram
+                  </a>
+                </div>
               </div>
             ))}
             </div>
           </div>
 
+
+
           {/* Ex Artists */}
           <div>
             <h3 className="text-4xl font-bold font-heading text-theme mb-8 uppercase tracking-wider">EX ARTISTS</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
-              {[
-                {
-                  title: "Rashim Anand",
-                  description: "An emerging artist with a unique blend of traditional and modern sounds. Her music reflects the contemporary Indian youth experience.",
-                  image: "/images/rashim.jpg",
-                  genres: ["Hip-Hop", "Fusion", "Contemporary"],
-                  link: "https://open.spotify.com/artist/2mKVmxuxFhT5bGcexlA2Cq?si=_tlg5eNQSQajtKyye3SlLQ"
-                },
-                {
-                  title: "BASU",
-                  description: "A versatile performer who brings innovation to the desi hip-hop scene. His work showcases the evolution of Indian rap culture.",
-                  image: "/images/basu.jpg",
-                  genres: ["Hip-Hop", "Rap", "Desi"],
-                  link: "https://open.spotify.com/artist/0VoB2BPTrISijm1qpNdGM8?si=N7igby5xS4Sd9fK4U0j4KQ"
-                }
-              ].map((artist, index) => (
-              <div 
-                key={index}
-                className="bg-[#CCB999]/10 backdrop-blur-sm border border-[#CCB999]/20 rounded-xl p-6 hover:border-[#CCB999]/50 transition-all duration-300 hover:-translate-y-2"
-              >
+            <div className="flex justify-center">
+              <div className="bg-[#CCB999]/10 backdrop-blur-sm border border-[#CCB999]/20 rounded-xl p-6 hover:border-[#CCB999]/50 transition-all duration-300 hover:-translate-y-2 w-full sm:w-1/2">
                 {/* Artist Photo */}
                 <div className="relative w-full aspect-square sm:aspect-[4/3] mb-6 rounded-lg overflow-hidden border border-white/30">
                   <img
-                    src={artist.image}
-                    alt={artist.title}
+                    src="/images/rashim.jpg"
+                    alt="Rashim Anand"
                     className="w-full h-full object-cover object-center"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -406,10 +467,10 @@ Let's talk if you're looking for someone who knows how to move both artists and 
                   />
                 </div>
                 
-                <h3 className="text-xl font-semibold text-theme mb-3">{artist.title}</h3>
-                <p className="text-theme/90 mb-4">{artist.description}</p>
+                <h3 className="text-xl font-semibold text-theme mb-3">Rashim Anand</h3>
+                <p className="text-theme/90 mb-4">An emerging artist with a unique blend of traditional and modern sounds. Her music reflects the contemporary Indian youth experience.</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {artist.genres.map((genre, genreIndex) => (
+                  {["Hip-Hop", "Fusion", "Contemporary"].map((genre, genreIndex) => (
                     <span 
                       key={genreIndex}
                       className="px-3 py-1 bg-theme/20 text-theme rounded-full text-sm"
@@ -418,16 +479,31 @@ Let's talk if you're looking for someone who knows how to move both artists and 
                     </span>
                   ))}
                 </div>
-                <a 
-                  href={artist.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-gradient-to-r from-[var(--primary)] to-[color-mix(in_srgb,_var(--primary)_70%,_transparent)] text-theme px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary)]/25"
-                >
-                  View Artist
-                </a>
+                <div className="flex gap-3 mt-4">
+                  <a 
+                    href="https://open.spotify.com/artist/2mKVmxuxFhT5bGcexlA2Cq?si=_tlg5eNQSQajtKyye3SlLQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#1DB954] to-[#1ed760] text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#1DB954]/25"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.375-.745.556-1.159.306-3.176-1.95-7.076-2.387-11.731-1.306-.417.122-.779-.122-.899-.561-.12-.438.122-.795.56-.915 5.088-1.186 9.36-.666 12.995 1.513.417.242.696.986.422 1.463zm1.175-3.275c-.303.459-.956.711-1.456.711-.108 0-.216-.021-.322-.064-3.9-1.952-9.901-2.612-14.464-1.309-.341.077-.678-.156-.779-.521-.098-.362.149-.687.519-.787 5.316-1.324 11.795-.639 16.063 1.50.35.175.64.572.64.981.001.271-.099.53-.297.722zm.9-3.761c-4.564-2.692-12.321-3.268-18.845-1.815-.547.159-1.081-.284-1.239-.842-.157-.561.217-1.09.764-1.249 7.644-1.711 16.219-.957 21.289 2.079.542.315.898.942.898 1.633 0 .642-.356 1.269-.898 1.584z"/>
+                    </svg>
+                    Spotify
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/rashimmusic?igsh=MXg5ODJlMjZjY25oNQ=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#E1306C] via-[#FD1D1D] to-[#F77737] text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#E1306C]/25"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                    </svg>
+                    Instagram
+                  </a>
+                </div>
               </div>
-            ))}
             </div>
           </div>
         </div>
@@ -509,6 +585,11 @@ Let's talk if you're looking for someone who knows how to move both artists and 
                 <div>
                   <p className="text-theme/80 mb-2">Socials</p>
                   <div className="flex gap-4">
+                    <a href="https://open.spotify.com/user/xkxmo3mj6hioeufhhudfts0fb?si=e1cd28ac50fe4a24" target="_blank" rel="noopener noreferrer" className="text-theme hover:text-white">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.375-.745.556-1.159.306-3.176-1.95-7.076-2.387-11.731-1.306-.417.122-.779-.122-.899-.561-.12-.438.122-.795.56-.915 5.088-1.186 9.36-.666 12.995 1.513.417.242.696.986.422 1.463zm1.175-3.275c-.303.459-.956.711-1.456.711-.108 0-.216-.021-.322-.064-3.9-1.952-9.901-2.612-14.464-1.309-.341.077-.678-.156-.779-.521-.098-.362.149-.687.519-.787 5.316-1.324 11.795-.639 16.063 1.50.35.175.64.572.64.981.001.271-.099.53-.297.722zm.9-3.761c-4.564-2.692-12.321-3.268-18.845-1.815-.547.159-1.081-.284-1.239-.842-.157-.561.217-1.09.764-1.249 7.644-1.711 16.219-.957 21.289 2.079.542.315.898.942.898 1.633 0 .642-.356 1.269-.898 1.584z"/>
+                      </svg>
+                    </a>
                     <a href="https://www.linkedin.com/in/vaibhav-raina-834685268/" target="_blank" rel="noopener noreferrer" className="text-theme hover:text-white">
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -561,20 +642,22 @@ Let's talk if you're looking for someone who knows how to move both artists and 
                   required
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="px-6 py-2 bg-gradient-to-r from-[var(--primary)] to-[color-mix(in_srgb,_var(--primary)_70%,_transparent)] text-theme rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary)]/25"
-              >
-                {isLoading ? (
-                  <>
-                    <span className="inline-block w-4 h-4 border-2 border-[var(--text)] border-t-transparent rounded-full animate-spin"></span>
-                    Sending...
-                  </>
-                ) : (
-                  'Send Message'
-                )}
-              </button>
+              <div className="flex justify-center pt-4">
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="px-6 py-2 bg-gradient-to-r from-[var(--primary)] to-[color-mix(in_srgb,_var(--primary)_70%,_transparent)] text-theme rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary)]/25"
+                >
+                  {isLoading ? (
+                    <>
+                      <span className="inline-block w-4 h-4 border-2 border-[var(--text)] border-t-transparent rounded-full animate-spin"></span>
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
+                </button>
+              </div>
             </form>
           </div>
         </div>

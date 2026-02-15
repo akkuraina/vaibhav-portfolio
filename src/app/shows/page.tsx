@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import Navbar from '@/components/Navbar';
 
 export default function ShowsPage() {
   const [shows] = useState([
@@ -26,8 +28,18 @@ export default function ShowsPage() {
 
   return (
     <main className="w-full min-h-screen bg-[var(--background)] text-[var(--text)]">
+      <Navbar />
       <div className="pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto">
+          <Link 
+            href="/#experience"
+            className="inline-flex items-center gap-2 text-theme hover:text-theme/80 transition-colors mb-8 text-sm font-medium"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 12H5m7 7l-7-7 7-7" />
+            </svg>
+            Back to Home
+          </Link>
           <h1 className="text-6xl font-bold font-heading text-theme mb-4 uppercase tracking-wider">
             Shows Organised
           </h1>

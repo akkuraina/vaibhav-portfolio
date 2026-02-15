@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
@@ -14,10 +14,14 @@ const navItems = [
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
+    if (!isHomePage) return;
+
     const handleScroll = () => {
-      const sections = navItems.map(item => item.href.substring(1));
+      const sections = ['home', 'about', 'projects', 'experience', 'contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -33,9 +37,13 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!isHomePage) {
+      window.location.href = '/' + href;
+      return;
+    }
     e.preventDefault();
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
@@ -52,10 +60,10 @@ export default function Navbar() {
           {navItems.map((item) => (
             <a
               key={item.name}
-              href={item.href}
+              href={isHomePage ? item.href : '/' + item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               className={`text-base md:text-sm font-medium transition-colors duration-200 ${
-                activeSection === item.href.substring(1)
+                isHomePage && activeSection === item.href.substring(1)
                   ? 'text-cyan-100'
                   : 'text-gray-300 hover:text-cyan-100'
               }`}
