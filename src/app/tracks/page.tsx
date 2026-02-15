@@ -1,64 +1,66 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 
+interface Track {
+  id: number;
+  title: string;
+  artist: string;
+  spotifyUrl: string;
+  releaseDate: string;
+  imageUrl?: string;
+}
+
 export default function TracksPage() {
-  const [tracks] = useState([
+  const [tracks, setTracks] = useState<Track[]>([
     {
       id: 1,
-      title: "Pyaar seekha",
-      artist: "Rashim Anand",
-      image: "/images/track1.jpg",
-      spotifyUrl: "https://open.spotify.com/track/",
-      releaseDate: "2024"
+      title: "Sadabahar",
+      artist: "Jeevant, Het",
+      spotifyUrl: "https://open.spotify.com/track/7gr6B0s1kxMooMV61qwbuR",
+      releaseDate: "2025"
     },
     {
       id: 2,
-      title: "KCD",
-      artist: "Rashim Anand & Nanku",
-      image: "/images/track2.jpg",
-      spotifyUrl: "https://open.spotify.com/track/",
-      releaseDate: "2024"
+      title: "Pyaar",
+      artist: "Mohit",
+      spotifyUrl: "https://open.spotify.com/track/68r9qK8ib0dCcme3L8kj60",
+      releaseDate: "2025"
     },
     {
       id: 3,
-      title: "Aaja sanam",
-      artist: "Rashim Anand",
-      image: "/images/track3.jpg",
-      spotifyUrl: "https://open.spotify.com/track/",
-      releaseDate: "2023"
+      title: "Alfaz",
+      artist: "Pistoul",
+      spotifyUrl: "https://open.spotify.com/album/23s47ybWD82LEUZat93vYG",
+      releaseDate: "2025"
     },
     {
       id: 4,
-      title: "Khwabon mein",
-      artist: "Rashim Anand",
-      image: "/images/track4.jpg",
-      spotifyUrl: "https://open.spotify.com/track/",
-      releaseDate: "2023"
+      title: "Do or Die",
+      artist: "Mohit",
+      spotifyUrl: "https://open.spotify.com/track/58ZWAvSafhbHgzemGfhPss",
+      releaseDate: "2026"
     },
     {
       id: 5,
-      title: "Saste phool patte",
+      title: "KCD",
       artist: "Rashim Anand",
-      image: "/images/track5.jpg",
-      spotifyUrl: "https://open.spotify.com/track/",
-      releaseDate: "2023"
+      spotifyUrl: "https://open.spotify.com/album/2wne4hYptF8D1iKVmd3gRW",
+      releaseDate: "2025"
     },
     {
       id: 6,
-      title: "20-21",
-      artist: "Gurru",
-      image: "/images/track6.jpg",
-      spotifyUrl: "https://open.spotify.com/track/",
-      releaseDate: "2024"
+      title: "Aaja Sanam",
+      artist: "Rashim Anand",
+      spotifyUrl: "https://open.spotify.com/album/4AY1CpqaG3fly6xQGIn6mA",
+      releaseDate: "2025"
     },
     {
       id: 7,
       title: "Chanchal",
       artist: "Gurru",
-      image: "/images/track7.jpg",
       spotifyUrl: "https://open.spotify.com/track/",
       releaseDate: "2024"
     },
@@ -66,11 +68,50 @@ export default function TracksPage() {
       id: 8,
       title: "Artistic Dilemma",
       artist: "Gurru",
-      image: "/images/track8.jpg",
       spotifyUrl: "https://open.spotify.com/track/",
       releaseDate: "2023"
     },
   ]);
+
+  const [loadingImages, setLoadingImages] = useState(true);
+
+  useEffect(() => {
+    const fetchTrackImages = async () => {
+      try {
+        const updatedTracks = await Promise.all(
+          tracks.map(async (track) => {
+            try {
+              const response = await fetch('/api/spotify', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ spotifyUrl: track.spotifyUrl }),
+              });
+
+              if (response.ok) {
+                const data = await response.json();
+                return { ...track, imageUrl: data.imageUrl };
+              }
+            } catch (error) {
+              console.error(`Failed to fetch image for ${track.title}:`, error);
+            }
+            return track;
+          })
+        );
+
+        setTracks(updatedTracks);
+      } catch (error) {
+        console.error('Error fetching track images:', error);
+      } finally {
+        setLoadingImages(false);
+      }
+    };
+
+    fetchTrackImages();
+  }, []);
+
+  const getFallbackImage = () => "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%2306b6d4' fill-opacity='0.1'/%3E%3Ctext x='150' y='150' text-anchor='middle' fill='%2306b6d4' font-family='Arial' font-size='16'%3ETrack Image%3C/text%3E%3C/svg%3E";
 
   return (
     <main className="w-full min-h-screen bg-[var(--background)] text-[var(--text)]">
@@ -104,12 +145,12 @@ export default function TracksPage() {
                   {/* Track Image */}
                   <div className="relative w-full aspect-square overflow-hidden bg-[var(--primary)]/5">
                     <img
-                      src={track.image}
+                      src={track.imageUrl || getFallbackImage()}
                       alt={track.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%2306b6d4' fill-opacity='0.1'/%3E%3Ctext x='150' y='150' text-anchor='middle' fill='%2306b6d4' font-family='Arial' font-size='14'%3ETrack Cover%3C/text%3E%3C/svg%3E";
+                        target.src = getFallbackImage();
                       }}
                     />
                     {/* Spotify Badge */}
