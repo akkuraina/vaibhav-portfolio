@@ -59,17 +59,24 @@ export default function TracksPage() {
     },
     {
       id: 7,
-      title: "Chanchal",
-      artist: "Gurru",
-      spotifyUrl: "https://open.spotify.com/track/",
-      releaseDate: "2024"
+      title: "Khwabon mein",
+      artist: "KSAR, Rashim Anand",
+      spotifyUrl: "https://open.spotify.com/track/0xiPEbd9Ffhzjece83nlzm?si=gVxfCXRjTgiW0TfxIGMjHg",
+      releaseDate: "2025"
     },
     {
       id: 8,
-      title: "Artistic Dilemma",
-      artist: "Gurru",
-      spotifyUrl: "https://open.spotify.com/track/",
-      releaseDate: "2023"
+      title: "Pyaar Seekha",
+      artist: "Rashim Anand",
+      spotifyUrl: "https://open.spotify.com/track/3cRmFoeqlLH44jU2HqvFbZ?si=bBKu7K_tT6qhB5kwyCroTQ",
+      releaseDate: "2024"
+    },
+    {
+      id: 9,
+      title: "Saste Phool Patte",
+      artist: "Rashim Anand",
+      spotifyUrl: "https://open.spotify.com/album/0HedU9l2DTCsslMMeN6jJE?si=BIwNMk0ARpyy1NtDNg_AHg",
+      releaseDate: "2024"
     },
   ]);
 
