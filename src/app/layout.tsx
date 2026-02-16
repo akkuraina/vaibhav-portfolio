@@ -1,4 +1,3 @@
-import localFont from 'next/font/local';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '../components/ThemeProvider';
@@ -12,22 +11,6 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const cascadiaMono = localFont({
-  src: [
-    {
-      path: '../fonts/CascadiaMono-VariableFont_wght.woff2',
-      weight: '100 900',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/CascadiaMono-Italic-VariableFont_wght.woff2',
-      weight: '100 900',
-      style: 'italic',
-    }
-  ],
-  variable: '--font-cascadia-mono',
-  display: 'swap',
-});
 
 export const metadata = {
   title: 'Vaibhav - Artist Manager',
@@ -40,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cascadiaMono.variable} ${inter.variable}`}>
-      <body className="font-mono">
+      <html lang="en" className={`${inter.variable}`}>
+        <body>
         <ThemeProvider>
           <StarBackground />
           <Navbar />

@@ -1,6 +1,11 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap');
 
 :root {
+ /* Google Fonts: Montserrat for body, Playfair Display for headings */
+ --font-sans: 'Montserrat', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ --font-heading: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+
   --background: #501216;
   --text: #CCB999;
   --primary: #CCB999;
@@ -38,12 +43,28 @@ html {
 }
 
 body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
   color: var(--text);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
+
+/* Heading / display styles to make typography bold and elegant */
+.font-heading,
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Slightly heavier weight for main headings */
+h1 { font-size: clamp(2rem, 3.5vw, 4rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
 
 /* Stars background */
 .stars {
